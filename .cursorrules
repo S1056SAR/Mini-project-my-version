@@ -1,0 +1,54 @@
+Project: FinTech-Driven Intelligent Investment Strategies Using Advanced Reinforcement Learning and Deep Learning Models
+General Guidelines
+Project Context:
+This project implements a hybrid AI framework for stock market forecasting and trading, combining LSTM-based time-series prediction, Reinforcement Learning agents for trading decisions, and sentiment analysis from financial news/social media. The codebase is Python-based, modular, and research-oriented.
+
+Coding Standards:
+
+All code must be written in Python 3.10+.
+
+Use standard ML/DL libraries: PyTorch, scikit-learn, Stable-Baselines3 (for RL), and HuggingFace Transformers (for NLP).
+
+Follow PEP8 style guidelines.
+
+Use type hints for all function signatures.
+
+Include docstrings for all functions and classes, describing inputs, outputs, and purpose.
+
+Organize code into logical sections: imports, configuration, data loading, preprocessing, feature engineering, modeling, evaluation, and visualization.
+
+Prefer pandas for data manipulation and numpy for numerical operations.
+
+Each module (data ingestion, preprocessing, feature engineering, modeling, evaluation, visualization) should be in a separate file or notebook cell.
+
+Modeling Rules:
+
+For LSTM models, use PyTorch's nn.LSTM modules.
+
+For RL, use Stable-Baselines3 PPO or DDPG agents.
+
+When writing code for the RL agent, always use a Sharpe Ratio-based reward function for risk-aware trading.
+
+For sentiment analysis, use VADER for general sentiment and FinBERT for finance-specific sentiment. Preprocess text data with tokenization and vectorization.
+
+Data Handling:
+
+All data ingestion must be performed via APIs (Yahoo Finance, Twitter, Kaggle) and saved in CSV or JSON format for reproducibility.
+
+Include error handling for all API calls and data loading steps.
+
+Never use deprecated Python libraries (e.g., avoid Python 2).
+
+Evaluation & Visualization:
+
+When generating evaluation reports, always include key metrics: RMSE, Sharpe Ratio, cumulative returns, and drawdowns.
+
+Visualizations should use Matplotlib or Plotly and be suitable for inclusion in research reports (clear labels, legends, and titles).
+
+Reproducibility:
+
+Set random seeds for all experiments (NumPy, PyTorch, etc.).
+
+Document all hyperparameters.
+
+Log model versions and experiment results.

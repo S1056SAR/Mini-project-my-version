@@ -1,0 +1,27 @@
+# environment.example - Copy this file to .env and fill in your actual API keys and secrets.
+# Do not commit the .env file to version control.
+
+# Yahoo Finance (not typically needed unless using a premium API, yfinance usually works without a key)
+# YFINANCE_API_KEY=
+
+# Twitter API V2 Credentials (for sentiment analysis from tweets)
+# Replace with your actual Bearer Token or Consumer Key/Secret if using a different access method
+TWITTER_BEARER_TOKEN="your_twitter_bearer_token_here"
+# Or, if using older API versions or different libraries that require consumer keys:
+# TWITTER_API_KEY="your_twitter_api_key"
+# TWITTER_API_SECRET_KEY="your_twitter_api_secret_key"
+# TWITTER_ACCESS_TOKEN="your_twitter_access_token"
+# TWITTER_ACCESS_TOKEN_SECRET="your_twitter_access_token_secret"
+
+# Kaggle API Credentials (for downloading datasets)
+KAGGLE_USERNAME="your_kaggle_username"
+KAGGLE_KEY="your_kaggle_api_key"
+
+# Other potential API keys or sensitive configuration
+# EXAMPLE_OTHER_API_KEY="your_other_api_key_here"
+
+# Database connection string (if using a database for storing data/results)
+# DATABASE_URL="postgresql://user:password@host:port/database"
+
+# Set to "development", "staging", or "production" as needed
+ENVIRONMENT="development" 

@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE-specific files/folders
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Log files
+*.log
+logs/
+
+# Environment variables file (actual keys should not be committed)
+.env
+
+# Project-specific data and experiments output
+# (assuming you don't want to track large data files or experiment results in Git)
+# If you have small sample data you DO want to track, adjust these or use Git LFS.
+data/raw/
+data/processed/
+data/featured/
+
+experiments/
+
+# Configuration files that might contain sensitive info locally
+# (config/config.yaml is generic, but if you had a local override, e.g., config.local.yaml)
+# config.local.yaml
+
+# Stable-Baselines3 logs (if any are generated outside experiments)
+# sb3_logs/
+
+# Coverage reports
+.coverage
+coverage.xml
+htmlcov/
+
+# Test reports
+.pytest_cache/
+.tox/ 

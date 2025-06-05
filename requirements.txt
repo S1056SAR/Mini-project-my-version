@@ -1,0 +1,44 @@
+# Core ML/DL Libraries
+torch
+torchvision
+torchaudio
+stable-baselines3[extra]
+transformers
+scikit-learn
+pandas
+numpy
+
+# Data Ingestion & Handling
+yfinance
+requests
+beautifulsoup4
+lxml
+python-twitter
+kaggle
+
+# Sentiment Analysis
+vaderSentiment
+# FinBERT is usually installed from a specific source or a local setup, 
+# will add specific instructions if needed or assume it's handled during FinBERT integration.
+
+# Visualization
+matplotlib
+plotly
+seaborn
+
+# Experiment Tracking & MLOps (Optional but recommended)
+# mlflow
+# optuna
+# hydra-core
+
+# Utilities
+python-dotenv
+tqdm
+scipy
+statsmodels
+pyyaml
+joblib
+# For Jupyter Notebooks (if used for experimentation)
+notebook
+jupyterlab
+ipykernel 

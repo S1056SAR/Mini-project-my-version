@@ -1,0 +1,94 @@
+# Main configuration file for the FinTech AI Trading application
+
+# General Project Settings
+project_name: "FinTech-Driven Intelligent Investment Strategies"
+version: "0.1.0"
+random_seed: 42 # For reproducibility
+
+# Data Ingestion Configuration
+data_ingestion:
+  yahoo_finance:
+    us_stocks:
+      enabled: true
+      tickers: [
+        "AAPL", "MSFT", "GOOGL", "AMZN", "NVDA", "TSLA", "META", "BRK-B", "JPM", "JNJ",
+        "V", "PG", "MA", "UNH", "HD", "BAC", "DIS", "ADBE", "CRM", "PFE",
+        "KO", "MCD", "NFLX", "PEP", "XOM", "CVX", "WMT", "COST", "LLY", "ABBV",
+        "MRK", "AVGO", "CSCO", "TMO", "ACN", "ORCL", "INTC", "QCOM", "IBM", "AMD",
+        "NEE", "LIN", "SBUX", "GS", "BA", "CAT", "GE", "RTX", "HON", "PYPL"
+      ]
+      start_date: "2010-01-04"
+      end_date: "2023-12-31"
+      interval: "1d"
+    indian_stocks:
+      enabled: true
+      tickers: [
+        "RELIANCE.NS", "TCS.NS", "HDFCBANK.NS", "INFY.NS", "HINDUNILVR.NS", "ICICIBANK.NS", "ITC.NS", "SBIN.NS", "BHARTIARTL.NS", "KOTAKBANK.NS",
+        "HCLTECH.NS", "LT.NS", "WIPRO.NS", "ASIANPAINT.NS", "AXISBANK.NS", "BAJFINANCE.NS", "MARUTI.NS", "TITAN.NS", "SUNPHARMA.NS", "ULTRACEMCO.NS",
+        "ADANIENT.NS", "BAJAJFINSV.NS", "NESTLEIND.NS", "ONGC.NS", "NTPC.NS", "POWERGRID.NS", "M&M.NS", "JSWSTEEL.NS", "TATAMOTORS.NS", "TATASTEEL.NS",
+        "INDUSINDBK.NS", "HINDALCO.NS", "CIPLA.NS", "DRREDDY.NS", "ADANIPORTS.NS", "GRASIM.NS", "TECHM.NS", "BAJAJ-AUTO.NS", "EICHERMOT.NS", "HEROMOTOCO.NS",
+        "BRITANNIA.NS", "SHREECEM.NS", "UPL.NS", "DIVISLAB.NS", "APOLLOHOSP.NS", "BPCL.NS", "IOC.NS", "COALINDIA.NS", "SBILIFE.NS", "HDFCLIFE.NS"
+      ]
+      start_date: "2010-01-04"
+      end_date: "2023-12-31"
+      interval: "1d"
+    # Common parameters or individual lists can be here or nested as above.
+    # For example, if start_date, end_date, interval are always common, they could be at a higher level.
+    # Current structure allows market-specific date ranges/intervals if needed in the future.
+  twitter:
+    keywords: ["#stockmarket", "#investing", "$AAPL"]
+    max_tweets: 1000
+  kaggle:
+    dataset_name: "some/financial-news-dataset"
+
+# Preprocessing Configuration
+preprocessing:
+  fillna_method: "ffill" # Forward fill for missing values
+  scaling_method: "MinMaxScaler" # or StandardScaler
+
+# Feature Engineering Configuration
+feature_engineering:
+  technical_indicators:
+    moving_averages: [10, 20, 50] # MA window sizes
+    rsi_period: 14
+  sentiment_features:
+    sentiment_window: 7 # Days to average sentiment over
+
+# Model Configuration
+models:
+  lstm:
+    epochs: 100
+    batch_size: 32
+    learning_rate: 0.001
+    sequence_length: 60
+    hidden_layers: 2
+    hidden_units: 50
+  rl_ppo: # PPO agent from Stable-Baselines3
+    policy: "MlpPolicy"
+    learning_rate: 0.0003
+    n_steps: 2048
+    batch_size: 64
+    total_timesteps: 1000000
+  rl_ddpg: # DDPG agent from Stable-Baselines3
+    policy: "MlpPolicy"
+    learning_rate_actor: 0.001
+    learning_rate_critic: 0.001
+    batch_size: 100
+    total_timesteps: 1000000
+  sentiment_vader:
+    threshold: 0.05 # For classifying sentiment as positive/negative/neutral
+  sentiment_finbert:
+    model_name: "ProsusAI/finbert" # Default FinBERT model
+
+# Evaluation Configuration
+evaluation:
+  metrics: ["RMSE", "SharpeRatio", "CumulativeReturns", "MaxDrawdown"]
+  backtest_start_date: "2023-01-01"
+  initial_capital: 100000
+  transaction_cost_bps: 2 # Basis points, e.g., 0.02%
+
+# Logging and Experiment Tracking
+logging:
+  log_level: "INFO"
+  log_file: "experiments/project.log"
+  # experiment_tracking_tool: "mlflow" # or "wandb" 
