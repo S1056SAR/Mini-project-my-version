@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # FinTech-Driven Intelligent Investment Strategies
 
 This project implements a hybrid AI framework for stock market forecasting and trading, combining LSTM-based time-series prediction, Reinforcement Learning agents for trading decisions, and sentiment analysis from financial news/social media. The codebase is Python-based, modular, and research-oriented.
@@ -102,3 +103,6 @@ python src/main.py --pipeline train_lstm --config config/lstm_config.yaml
 *   **Visualization**: Creates plots using Matplotlib or Plotly.
 
 This README will be updated as the project progresses. 
+=======
+# Mini-project-my-version
+>>>>>>> f3bce604419a106b39df1c48c8c509331b7680fe
